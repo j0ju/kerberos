@@ -8,6 +8,15 @@
 *.lso
 *.elf
 *.ace
+ 
+*.o
+qt/Makefile
+qt/ui_mainwindowform.h
+qt/moc_mainwindow.cpp
+qt/qrc_application.cpp
+qt/kerberos.bin
+qt/kerberos
+ 
 *~
 *#
 *.swp

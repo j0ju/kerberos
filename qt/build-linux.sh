@@ -16,6 +16,7 @@ then
 fi
 
 echo "[*] Building application"
+rm -f Makefile ui_mainwindowform.h
 qmake
 make
 
@@ -31,10 +32,10 @@ then
     echo "$BIN --> $RELDIR/bin"
     cp kerberos.bin $RELDIR/bin
 
-    LIBS=`ldd kerberos.bin | grep -e Qt -e icu -e gcc -e stdc++ -e pthread -e png | awk '{print $3}'`    
+    LIBS=`ldd kerberos.bin | grep -e Qt -e icu -e gcc -e stdc++ -e pthread -e png | awk '{print $3}'`
     for LIB in $LIBS; do
-	echo "$LIB --> $RELDIR/lib"
-	cp $LIB $RELDIR/lib
+    echo "$LIB --> $RELDIR/lib"
+	  cp $LIB $RELDIR/lib
     done
 
     SCRIPT=$RELDIR/kerberos.sh
@@ -47,4 +48,4 @@ then
 else
     echo "[*] Could not build application"
 fi
- 
+
